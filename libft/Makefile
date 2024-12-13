@@ -14,13 +14,13 @@ BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(MAKEFILE) $(LIBFT)
 	$(AR) $(NAME) $(OBJ)
 
 bonus: $(NAME) $(BONUS_OBJ) $(OBJ)
 	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
 
-%.o: %.c $(MAKEFILE) $(LIBFT)
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

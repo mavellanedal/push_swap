@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_add_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 17:45:26 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/13 17:14:30 by mavellan         ###   ########.fr       */
+/*   Created: 2024/12/13 16:23:40 by mavellan          #+#    #+#             */
+/*   Updated: 2024/12/13 16:40:51 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_add_back(t_stack **stack, t_stack *new_stack)
 {
-	t_stack	*a;
-
-	a = ft_check_arg(ac, av);
-	if (!a || ft_check_dup(a))
-	{
-		ft_free(&a);
+	if (!stack)
 		ft_error_message();
-	}
-	return (0);
+	if (!*stack)
+		*stack = new_stack;
+	else
+		(ft_lstlast2(*stack))->next = new_stack;
 }

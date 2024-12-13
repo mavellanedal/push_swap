@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 13:57:59 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/12 18:00:12 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:53:13 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ void	ft_error_message(void);
 t_stack	*ft_check_arg(int ac, char **av);
 int		ft_atoi2(const char *str);
 int		ft_check_dup(t_stack *a);
-t_stack	*ft_add_back(t_stack **stack, t_stack *new_stack);
+void	ft_add_back(t_stack **stack, t_stack *new_stack);
 t_stack	*ft_new_stack(int number);
+t_stack	*ft_lstlast2(t_stack *lst);
+void	ft_freestr(char **lst);
+t_stack	*ft_subprocess(char **av);
+void	ft_free(t_stack **lst);
 
 #endif

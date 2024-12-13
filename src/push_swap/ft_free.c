@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 17:45:26 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/13 17:14:30 by mavellan         ###   ########.fr       */
+/*   Created: 2024/12/13 17:11:53 by mavellan          #+#    #+#             */
+/*   Updated: 2024/12/13 17:14:22 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_free(t_stack **lst)
 {
-	t_stack	*a;
+	t_stack	*tmp;
 
-	a = ft_check_arg(ac, av);
-	if (!a || ft_check_dup(a))
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		ft_free(&a);
-		ft_error_message();
+		tmp = (*lst)->next;
+		(*lst)->nbr = 0;
+		free(*lst);
+		*lst = tmp;
 	}
-	return (0);
 }
