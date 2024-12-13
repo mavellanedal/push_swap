@@ -11,18 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    size_t total_size;
-    void *ptr;
+	size_t	total_size;
+	void	*ptr;
 
-    total_size = nmemb * size;
-    ptr = malloc(total_size);
-    if (!ptr)
-        return (NULL);
-    ft_bzero(ptr, total_size);
-    return (ptr);
+	total_size = nmemb * size;
+	ptr = malloc(total_size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, total_size);
+	return (ptr);
 }
 
 /*#include <stdio.h>

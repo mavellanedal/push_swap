@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *res;
-	int i;
-	int total_len;
-	int j;
+	char	*res;
+	int		i;
+	int		total_len;
+	int		j;
 
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);

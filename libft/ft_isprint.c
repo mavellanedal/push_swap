@@ -10,15 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
-    if (c >= ' ' && c <= '~')
-        return (1);
-    return (0);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	return (0);
 }
 /*
 #include <stdio.h>
-#include <ctype.h>
+#include <ctype.h> 
 int main(void)
 {
     int test_values[] = {31, 32, 65, 126, 127, 255};

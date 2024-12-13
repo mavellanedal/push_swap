@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 17:45:26 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/12 18:01:00 by mavellan         ###   ########.fr       */
+/*   Created: 2024/12/12 14:25:47 by mavellan          #+#    #+#             */
+/*   Updated: 2024/12/12 18:03:21 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+int	ft_atoi2(const char *str)
 {
-	t_stack	*a;
+	int				sign;
+	long long int	res;
 
-	a = ft_check_arg(ac, av);
-	return (0);
-	if (!a || ft_check_dup(a))
+	sign = 1;
+	res = 0;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-')
 	{
-		free(a);
-		ft_error_message();
+		sign *= -1;
 	}
-	return (0);
+	str++;
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			ft_error_message();
+		res *= 10;
+		res += *str - '0';
+		str++;
+	}
+	if ((res * sign) > INT_MAX || (res * sign) < INT_MIN)
+		ft_error_message();
+	return (res * sign);
 }

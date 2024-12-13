@@ -10,15 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-        return (1);
-    return (0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
 
 /*#include <stdio.h>
-#include <ctype.h>
+#include <ctype.h> 
 int main(void)
 {
     int test_values[] = {-1, 0, 65, 127, 128, 255};

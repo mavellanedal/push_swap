@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t src_len;
-	size_t dst_len;
+	size_t	i;
+	size_t	src_len;
+	size_t	dst_len;
 
 	if (dst == NULL)
 		return (0);
+	i = 0;
+	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
 	if (src == NULL)
 		return (dst_len);
-	src_len = ft_strlen(src);
-	i = 0;
 	if (size <= dst_len)
 		return (size + src_len);
 	while ((src[i]) && (dst_len + i + 1) < size)
@@ -40,16 +40,16 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 /*#include <stdio.h>
 int main(void)
 {
-	char dest1[20] = "Hello";
-	char src[] = " World!";
-	size_t size = sizeof(dest1);  // Tamaño total del buffer destino
+    char dest1[20] = "Hello";
+    char src[] = " World!";
+    size_t size = sizeof(dest1);  // Tamaño total del buffer destino
 
-	// Usar ft_strlcat
-	size_t result1 = ft_strlcat(dest1, src, size);
+    // Usar ft_strlcat
+    size_t result1 = ft_strlcat(dest1, src, size);
 
-	// Mostrar el resultado de ft_strlcat
-	printf("Resultado de ft_strlcat: %s\n", dest1);
-	printf("Tamaño total esperado (ft_strlcat): %zu\n", result1);
+    // Mostrar el resultado de ft_strlcat
+    printf("Resultado de ft_strlcat: %s\n", dest1);
+    printf("Tamaño total esperado (ft_strlcat): %zu\n", result1);
 
-	return 0;
+    return 0;
 }*/

@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_error_message.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 17:45:26 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/12 18:01:00 by mavellan         ###   ########.fr       */
+/*   Created: 2024/12/12 14:12:05 by mavellan          #+#    #+#             */
+/*   Updated: 2024/12/12 17:54:21 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_error_message(void)
 {
-	t_stack	*a;
-
-	a = ft_check_arg(ac, av);
-	return (0);
-	if (!a || ft_check_dup(a))
-	{
-		free(a);
-		ft_error_message();
-	}
-	return (0);
+	write(2, "Error\n", 6);
+	exit(1);
 }

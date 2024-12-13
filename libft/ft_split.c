@@ -13,9 +13,9 @@
 #include "libft.h"
 #include <stdbool.h>
 
-int ft_safe_malloc(char **token_v, int position, size_t buffer)
+int	ft_safe_malloc(char **token_v, int position, size_t buffer)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	token_v[position] = malloc(buffer);
@@ -31,11 +31,11 @@ int ft_safe_malloc(char **token_v, int position, size_t buffer)
 	return (0);
 }
 
-int ft_fill(char **token_v, char const *s, char delimeter)
+int	ft_fill( char **token_v, char const *s, char delimeter)
 {
-	size_t len;
-	int j;
-	const char *start;
+	size_t		len;
+	int			j;
+	const char	*start;
 
 	j = 0;
 	while (*s)
@@ -60,10 +60,10 @@ int ft_fill(char **token_v, char const *s, char delimeter)
 	return (0);
 }
 
-size_t ft_count_tokens(char const *s, char delimeter)
+size_t	ft_count_tokens(char const *s, char delimeter)
 {
-	size_t tokens;
-	bool inside_token;
+	size_t	tokens;
+	bool	inside_token;
 
 	tokens = 0;
 	while (*s)
@@ -84,10 +84,10 @@ size_t ft_count_tokens(char const *s, char delimeter)
 	return (tokens);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	size_t tokens;
-	char **token_v;
+	size_t	tokens;
+	char	**token_v;
 
 	if (NULL == s)
 		return (NULL);

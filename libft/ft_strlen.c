@@ -12,32 +12,32 @@
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
     // Pruebas para ft_strlen
-    const char *test_str1 = NULL;
-    // const char *test_str2 = "ft_strlen";
-    // const char *test_str3 = "";  // Cadena vacía
+    const char *test_str1 = "Hello, World!";
+    const char *test_str2 = "ft_strlen";
+    const char *test_str3 = "";  // Cadena vacía
 
-    // size_t len1 = ft_strlen(test_str1);
-    // size_t len2 = ft_strlen(test_str2);
-    size_t len3 = ft_strlen(test_str1);
+    size_t len1 = ft_strlen(test_str1);
+    size_t len2 = ft_strlen(test_str2);
+    size_t len3 = ft_strlen(test_str3);
 
     // Mostrar los resultados
-    // printf("Longitud de '%s': %zu\n", test_str1, len1);
-    // printf("Longitud de '%s': %zu\n", test_str2, len2);
+    printf("Longitud de '%s': %zu\n", test_str1, len1);
+    printf("Longitud de '%s': %zu\n", test_str2, len2);
     printf("Longitud de una cadena vacía: %zu\n", len3);
 
     return 0;
-}
+}*/

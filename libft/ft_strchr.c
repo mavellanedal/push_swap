@@ -12,15 +12,13 @@
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char c_c;
-	int s_len;
-	int i;
+	unsigned char	c_c;
+	int				s_len;
+	int				i;
 
 	c_c = c;
-	if (s == NULL)
-		return (NULL);
 	s_len = ft_strlen(s);
 	i = 0;
 	while (i < s_len)
@@ -37,20 +35,20 @@ char *ft_strchr(const char *s, int c)
 /*#include <stdio.h>
 int main(void)
 {
-	// Pruebas para ft_strchr
-	const char *str = "Hello, World!";
-	char search_char = 'o';
-	char *result;
+    // Pruebas para ft_strchr
+    const char *str = "Hello, World!";
+    char search_char = 'o';
+    char *result;
 
-	result = ft_strchr(str, search_char);
-	if (result != NULL)
-	{
-		printf("Primera aparición de '%c': %s\n", search_char, result);
-	}
-	else
-	{
-		printf("Carácter '%c' no encontrado.\n", search_char);
-	}
+    result = ft_strchr(str, search_char);
+    if (result != NULL)
+    {
+        printf("Primera aparición de '%c': %s\n", search_char, result);
+    }
+    else
+    {
+        printf("Carácter '%c' no encontrado.\n", search_char);
+    }
 
-	return 0;
+    return 0;
 }*/

@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mavellan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:54:28 by mavellan          #+#    #+#             */
-/*   Updated: 2024/10/03 13:46:37 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/12 15:27:45 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Inseretar un string de tipo char puntero.
-int ft_atoi(const char *nptr)
+#include "libft.h"
+
+int	ft_atoi(const char *nptr)
 {
-	int i;		// Variable para iterar
-	int n;		// Variable para saber el signo que debe tener el valor de retorno.
-	int result; // La variable a devolver con el resultado.
+	int	i;
+	int	n;
+	int	result;
 
 	i = 0;
 	n = 1;
