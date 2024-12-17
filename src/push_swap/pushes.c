@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   pushes.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 16:23:40 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/16 15:37:45 by mavellan         ###   ########.fr       */
+/*   Created: 2024/12/16 16:34:13 by mavellan          #+#    #+#             */
+/*   Updated: 2024/12/16 16:45:43 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_add_back(t_stack **stack, t_stack *new_stack)
+void	ft_pa(t_stack **a, t_stack **b, int i)
 {
-	if (!stack)
+	t_stack	*tmp;
+
+	if (!*b)
 		return ;
-	if (!*stack)
-		*stack = new_stack;
-	else
-		(ft_lstlast2(*stack))->next = new_stack;
+	tmp = *a;
+	*a = *b;
+	*b = (*b)->next;
+	(*a)->next = tmp;
+	if (i == 0)
+		write(1, "pa\n", 3);
+}
+
+void	ft_pb(t_stack **a, t_stack **b, int i)
+{
+	t_stack	*tmp;
+
+	if (!*a)
+		return ;
+	tmp = *b;
+	*b = *a;
+	*a = (*a)->next;
+	(*b)->next = tmp;
+	if (i == 0)
+		write(1, "pb\n", 3);
 }

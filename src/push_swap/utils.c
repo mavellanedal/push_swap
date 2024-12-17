@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:25:47 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/13 16:57:12 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:46:55 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,20 @@ int	ft_atoi2(const char *str)
 	if (*str == '-')
 	{
 		sign *= -1;
+		str++;
 	}
-	str++;
+	else if (*str == '+')
+		str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
 			ft_error_message();
-		res *= 10;
-		res += *str - '0';
+		res = res * 10 + (*str - 48);
 		str++;
 	}
 	if ((res * sign) > INT_MAX || (res * sign) < INT_MIN)
 		ft_error_message();
 	return (res * sign);
-}
-
-t_stack	*ft_lstlast2(t_stack *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
 }
 
 void	ft_freestr(char **lst)
