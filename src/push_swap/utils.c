@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:25:47 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/16 15:46:55 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:37:57 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int	ft_atoi2(const char *str)
 	int				sign;
 	long long int	res;
 
-	sign = 1;
 	res = 0;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
+	sign = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
+		|| *str == '\v' || *str == '\r')
 		str++;
 	if (*str == '-')
 	{

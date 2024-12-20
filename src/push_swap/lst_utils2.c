@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:01:32 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/17 15:36:04 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:08:40 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ int	ft_find_place_a(t_stack *stack_a, int nbr_push)
 	t_stack	*tmp;
 
 	i = 1;
-	if (nbr_push > stack_a->nbr && nbr_push < ft_lstlast2(stack_a)->nbr)
+	if (nbr_push < stack_a->nbr && nbr_push > ft_lstlast2(stack_a)->nbr)
 		i = 0;
 	else if (nbr_push > ft_max(stack_a) || nbr_push < ft_min(stack_a))
-		i = ft_find_index(stack_a, ft_max(stack_a));
+		i = ft_find_index(stack_a, ft_min(stack_a));
 	else
 	{
 		tmp = stack_a->next;
-		while (stack_a->nbr < nbr_push || tmp->nbr > nbr_push)
+		while (stack_a->nbr > nbr_push || tmp->nbr < nbr_push)
 		{
 			stack_a = stack_a->next;
 			tmp = stack_a->next;

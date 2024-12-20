@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:56:23 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/17 17:53:19 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 15:17:04 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_case_rrarb(t_stack *a, t_stack *b, int c)
 	i = 0;
 	if (ft_find_index(a, c))
 		i = ft_lstsize2(a) - ft_find_index(a, c);
-	i = ft_find_index(b, c) + 1;
+	i = ft_find_place_b(b, c) + i;
 	return (i);
 }
 
@@ -50,8 +50,8 @@ int	ft_case_rarrb(t_stack *a, t_stack *b, int c)
 	int	i;
 
 	i = 0;
-	if (ft_find_index(b, c))
-		i = ft_lstsize2(b) - ft_find_index(b, c);
+	if (ft_find_place_b(b, c))
+		i = ft_lstsize2(b) - ft_find_place_b(b, c);
 	i = ft_find_index(a, c) + i;
 	return (i);
 }

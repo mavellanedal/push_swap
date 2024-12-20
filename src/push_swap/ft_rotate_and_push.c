@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:46:36 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/17 17:04:57 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 14:19:31 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s)
 			ft_rra(a, 0);
 		while (ft_find_place_b(*b, c) > 0)
 			ft_rb(b, 0);
-		ft_pa(a, b, 0);
+		ft_pb(a, b, 0);
 	}
 	else
 	{

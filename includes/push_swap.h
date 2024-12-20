@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 13:57:59 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/17 17:51:35 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:09:02 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_stack
 {

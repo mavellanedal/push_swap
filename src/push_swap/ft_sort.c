@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:42:12 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/17 17:51:36 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:07:27 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 	{
 		tmp = *stack_a;
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
-		while ((i >= 0))
+		while (i >= 0)
 		{
 			if (i == ft_case_rarb(*stack_a, *stack_b, tmp->nbr))
 				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'a');
@@ -29,8 +29,8 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'a');
 			else if (i == ft_case_rarrb(*stack_a, *stack_b, tmp->nbr))
 				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == ft_case_rarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'a');
+			else if (i == ft_case_rrarb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'a');
 			else
 				tmp = tmp->next;
 		}
@@ -42,11 +42,11 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 	t_stack	*stack_b;
 
 	stack_b = NULL;
-	if (ft_lstsize2(*stack_a) > 3 && ft_check_sorted(*stack_a))
+	if (ft_lstsize2(*stack_a) > 3 && !ft_check_sorted(*stack_a))
 		ft_pb(stack_a, &stack_b, 0);
-	if (ft_lstsize2(*stack_a) > 3 && ft_check_sorted(*stack_a))
+	if (ft_lstsize2(*stack_a) > 3 && !ft_check_sorted(*stack_a))
 		ft_pb(stack_a, &stack_b, 0);
-	if (ft_lstsize2(*stack_a) > 3 && ft_check_sorted(*stack_a))
+	if (ft_lstsize2(*stack_a) > 3 && !ft_check_sorted(*stack_a))
 		ft_sort_b_till_3(stack_a, &stack_b);
 	if (!ft_check_sorted(*stack_a))
 		ft_sort_three_num(stack_a);

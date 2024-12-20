@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:32:23 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/16 16:53:48 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:55:50 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,18 @@ void	ft_rrr2(t_stack **b, int j)
 
 	i = 0;
 	tmp = *b;
-	if (!*b || !((*b)->next))
-		return ;
 	while ((*b)->next)
 	{
-		*b = (*b)->next;
 		i++;
+		*b = (*b)->next;
 	}
 	(*b)->next = tmp;
-	while (1 < i)
+	while (i > 1)
 	{
 		tmp = tmp->next;
 		i--;
 	}
+	tmp->next = NULL;
 	if (j == 0)
 		write(1, "rrr\n", 4);
 }
@@ -41,20 +40,21 @@ void	ft_rrr(t_stack **a, t_stack **b, int j)
 	int		i;
 	t_stack	*tmp;
 
+	if (!*a || !((*a)->next) || !*b || !((*b)->next))
+		return ;
 	i = 0;
 	tmp = *a;
-	if (!*a || !((*a)->next))
-		return ;
 	while ((*a)->next)
 	{
-		*a = (*a)->next;
 		i++;
+		*a = (*a)->next;
 	}
 	(*a)->next = tmp;
-	while (1 < i)
+	while (i > 1)
 	{
 		tmp = tmp->next;
 		i--;
 	}
+	tmp->next = NULL;
 	ft_rrr2(b, j);
 }

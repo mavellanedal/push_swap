@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 15:45:45 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/17 17:45:54 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:07:34 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ t_stack	*ft_lstlast2(t_stack *lst)
 
 int	ft_lstsize2(t_stack *lst)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (lst != NULL)
+	while (lst)
 	{
-		i++;
 		lst = lst->next;
+		i++;
 	}
 	return (i);
 }
@@ -55,7 +55,7 @@ int	ft_max(t_stack *a)
 	i = a->nbr;
 	while (a)
 	{
-		if (a->nbr < i)
+		if (a->nbr > i)
 			i = a->nbr;
 		a = a->next;
 	}
@@ -72,5 +72,6 @@ int	ft_find_index(t_stack *a, int nbr)
 		i++;
 		a = a->next;
 	}
+	a->index = 0;
 	return (i);
 }

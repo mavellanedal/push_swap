@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:58:58 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/17 17:04:54 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:06:16 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	ft_rotate_type_ab(t_stack *a, t_stack *b)
 	{
 		if (i > ft_case_rarb(a, b, tmp->nbr))
 			i = ft_case_rarb(a, b, tmp->nbr);
-		if (i > ft_case_rarb(a, b, tmp->nbr))
-			i = ft_case_rarb(a, b, tmp->nbr);
-		if (i > ft_case_rarb(a, b, tmp->nbr))
-			i = ft_case_rarb(a, b, tmp->nbr);
-		if (i > ft_case_rarb(a, b, tmp->nbr))
-			i = ft_case_rarb(a, b, tmp->nbr);
+		if (i > ft_case_rrarrb(a, b, tmp->nbr))
+			i = ft_case_rrarrb(a, b, tmp->nbr);
+		if (i > ft_case_rarrb(a, b, tmp->nbr))
+			i = ft_case_rarrb(a, b, tmp->nbr);
+		if (i > ft_case_rrarb(a, b, tmp->nbr))
+			i = ft_case_rrarb(a, b, tmp->nbr);
 		tmp = tmp->next;
 	}
 	return (i);
@@ -40,17 +40,17 @@ int	ft_rotate_type_ba(t_stack *a, t_stack *b)
 	t_stack	*tmp;
 
 	tmp = b;
-	i = ft_case_rrarrb(a, b, b->nbr);
+	i = ft_case_rrarrb_a(a, b, b->nbr);
 	while (tmp)
 	{
 		if (i > ft_case_rarb_a(a, b, tmp->nbr))
 			i = ft_case_rarb_a(a, b, tmp->nbr);
-		if (i > ft_case_rarb_a(a, b, tmp->nbr))
-			i = ft_case_rarb_a(a, b, tmp->nbr);
-		if (i > ft_case_rarb_a(a, b, tmp->nbr))
-			i = ft_case_rarb_a(a, b, tmp->nbr);
-		if (i > ft_case_rarb_a(a, b, tmp->nbr))
-			i = ft_case_rarb_a(a, b, tmp->nbr);
+		if (i > ft_case_rrarrb_a(a, b, tmp->nbr))
+			i = ft_case_rrarrb_a(a, b, tmp->nbr);
+		if (i > ft_case_rarrb_a(a, b, tmp->nbr))
+			i = ft_case_rarrb_a(a, b, tmp->nbr);
+		if (i > ft_case_rrarb_a(a, b, tmp->nbr))
+			i = ft_case_rrarb_a(a, b, tmp->nbr);
 		tmp = tmp->next;
 	}
 	return (i);

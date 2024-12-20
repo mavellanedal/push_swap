@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:39:37 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/16 15:29:33 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/20 16:03:02 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int	ft_check_dup(t_stack *a)
 		while (temp)
 		{
 			if (a->nbr == temp->nbr)
-			{
-				printf("Se ha repetido el numero %ld", temp->nbr);
 				return (1);
-			}
 			temp = temp->next;
 		}
 		a = a->next;

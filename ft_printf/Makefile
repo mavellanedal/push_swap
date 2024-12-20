@@ -2,16 +2,16 @@ NAME = libftprintf.a
 
 SRC = ft_printf.c \
       ft_print_string.c \
-	  ft_print_char.c \
-	  ft_print_int.c \
-	  ft_print_unsigned.c \
-	  ft_putunsigned.c \
-	  ft_print_hex.c \
-	  ft_print_pointer.c
+      ft_print_char.c \
+      ft_print_int.c \
+      ft_print_unsigned.c \
+      ft_putunsigned.c \
+      ft_print_hex.c \
+      ft_print_pointer.c
 
 OBJ = $(SRC:.c=.o)
 
-LIBFT_DIR = ./libft
+LIBFT_DIR = ../libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 CC = cc
@@ -34,11 +34,11 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	make -C $(LIBFT_DIR) clean  # Limpia libft
+	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJ)
 
 fclean: clean
-	make -C $(LIBFT_DIR) fclean  # Limpia completamente libft
+	make -C $(LIBFT_DIR) fclean
 	rm -f $(NAME) libft.a
 
 re: fclean all
