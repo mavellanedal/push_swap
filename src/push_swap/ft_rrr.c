@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:32:23 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/20 13:55:50 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:13:00 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_rrr2(t_stack **b, int j)
 {
-	int		i;
 	t_stack	*tmp;
+	int		i;
 
 	i = 0;
 	tmp = *b;
@@ -37,8 +37,8 @@ void	ft_rrr2(t_stack **b, int j)
 
 void	ft_rrr(t_stack **a, t_stack **b, int j)
 {
-	int		i;
 	t_stack	*tmp;
+	int		i;
 
 	if (!*a || !((*a)->next) || !*b || !((*b)->next))
 		return ;

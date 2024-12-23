@@ -1,19 +1,15 @@
 NAME = push_swap
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
-
+FLAGS = -Wall -Wextra -Werror
 LIBFTDIR = libft/
-LIBFT_LIB = libft/libft.a
-
-PRINTF_DIR = ft_printf/
-PRINTF_LIB = ft_printf/libftprintf.a
-
 OBJ_DIR = obj/
-HEADER = includes/push_swap.h
+BONUS = checker
+SRC_DIR = src/
 
-SRC_2 = src/push_swap/push_swap.c \
-        src/push_swap/ft_error_message.c \
+SRC_1 = src/push_swap/push_swap.c \
+
+SRC_2 = src/push_swap/ft_error_message.c \
         src/push_swap/utils.c \
         src/push_swap/checks.c \
         src/push_swap/ft_add_back.c \
@@ -33,35 +29,39 @@ SRC_2 = src/push_swap/push_swap.c \
         src/push_swap/ft_rotate_and_push.c \
         src/push_swap/solver_utils2.c
 
+BONUS_SRC = src/checker/checker.c \
+            src/checker/checker_utils.c \
+
+OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}
 
-INCLUDE_LIBFT = -L ./libft -lft
-INCLUDE_PRINTF = -L ./ft_printf -lftprintf
+BONUS_OBJ = ${BONUS_SRC:.c=.o}
 
-all: make_libft make_printf $(NAME)
+INCLUDE = -L ./libft -lft
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o $@
+	${CC} -c $< -o ${<:.c=.o}
 
-$(NAME): $(OBJ_2) $(LIBFT_LIB) $(PRINTF_LIB) Makefile $(HEADER)
-	${CC} ${CFLAGS} $(OBJ_2) -o ${NAME} ${INCLUDE_LIBFT} ${INCLUDE_PRINTF}
-
-make_libft:
+${NAME}: ${OBJ_1} ${OBJ_2}
 	make -C $(LIBFTDIR)
+	${CC} ${FLAGS} ${OBJ_1} ${OBJ_2} -o ${NAME} ${INCLUDE}
 
-make_printf: make_libft
-	make -C $(PRINTF_DIR)
+${BONUS}: ${OBJ_2} ${BONUS_OBJ}
+	make -C $(LIBFTDIR)
+	${CC} ${FLAGS} ${BONUS_OBJ} ${OBJ_2} -o ${BONUS} ${INCLUDE}
+
+all: ${NAME} ${BONUS}
+
+bonus: ${BONUS}
 
 clean:
-	${RM} ${OBJ_2}
-	cd $(LIBFTDIR) && $(MAKE) clean
-	cd $(PRINTF_DIR) && $(MAKE) clean
+	${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
+	@cd $(LIBFTDIR) && $(MAKE) clean
 
 fclean: clean
-	${RM} $(NAME)
-	cd $(LIBFTDIR) && $(MAKE) fclean
-	cd $(PRINTF_DIR) && $(MAKE) fclean
+	${RM} ${NAME}
+	@cd $(LIBFTDIR) && $(MAKE) fclean
 
-re: fclean all
+re: clean all
 
-.PHONY: all clean fclean re make_libft make_printf
+.PHONY: all clean fclean re bonus

@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
+/*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mavellan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 16:28:51 by mavellan          #+#    #+#             */
-/*   Updated: 2024/10/11 12:02:54 by mavellan         ###   ########.fr       */
+/*   Created: 2024/12/23 18:30:53 by mavellan          #+#    #+#             */
+/*   Updated: 2024/12/23 18:31:37 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../includes/push_swap.h"
 
-void	ft_putnbr_unsigned(unsigned int n)
+void	ft_error_ch(void)
 {
-	char	digit;
-
-	if (n >= 10)
-		ft_putnbr_unsigned(n / 10);
-	digit = (n % 10) + '0';
-	write(1, &digit, 1);
+	write(1, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }

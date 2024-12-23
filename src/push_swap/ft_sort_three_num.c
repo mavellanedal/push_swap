@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:18:59 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/20 16:07:02 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:16:17 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_sort_three_num(t_stack **stack_a)
 		ft_rra(stack_a, 0);
 		ft_sa(stack_a, 0);
 	}
-	if (ft_max(*stack_a) == (*stack_a)->nbr)
+	else if (ft_max(*stack_a) == (*stack_a)->nbr)
 	{
 		ft_ra(stack_a, 0);
 		if (!ft_check_sorted(*stack_a))

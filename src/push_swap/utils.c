@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:25:47 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/20 13:37:57 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:37:10 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_atoi2(const char *str)
 		str++;
 	if (*str == '-')
 	{
-		sign *= -1;
+		sign = -1;
 		str++;
 	}
 	else if (*str == '+')

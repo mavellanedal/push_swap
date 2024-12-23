@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:10:07 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/20 13:52:32 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/23 17:29:18 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	ft_rb(t_stack **b, int i)
 
 void	ft_rra(t_stack **a, int j)
 {
-	int		i;
 	t_stack	*tmp;
+	int		i;
 
 	if (!*a || !((*a)->next))
 		return ;
@@ -69,8 +69,8 @@ void	ft_rra(t_stack **a, int j)
 
 void	ft_rrb(t_stack **b, int j)
 {
-	int		i;
 	t_stack	*tmp;
+	int		i;
 
 	if (!*b || !((*b)->next))
 		return ;
@@ -78,8 +78,8 @@ void	ft_rrb(t_stack **b, int j)
 	tmp = *b;
 	while ((*b)->next)
 	{
-		*b = (*b)->next;
 		i++;
+		*b = (*b)->next;
 	}
 	(*b)->next = tmp;
 	while (i > 1)
