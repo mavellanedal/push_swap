@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 18:06:22 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/23 18:25:23 by mavellan         ###   ########.fr       */
+/*   Updated: 2024/12/23 22:47:51 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,78 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-char	*get_first_line(int fd, char *left_str)
+char	*ft_sub(char **rest, char **line)
 {
-	char	*buffer;
-	int		bytes_read;
+	char	*str;
 
-	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buffer)
-		return (NULL);
-	bytes_read = 1;
-	while (!ft_strchr(left_str, '\n') && bytes_read != 0)
+	str = NULL;
+	if (*rest)
 	{
-		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read == -1)
+		*line = *rest;
+		str = ft_strchr(*rest, '\n');
+		if (str)
 		{
-			free(buffer);
-			buffer = NULL;
-			return (NULL);
+			str++;
+			if (*str != '\0')
+				*rest = ft_strdup(str);
+			else
+				*rest = NULL;
+			*str = '\0';
 		}
-		buffer[bytes_read] = '\0';
-		left_str = ft_strjoin(left_str, buffer);
+		else
+			*rest = NULL;
 	}
-	free (buffer);
-	return (left_str);
+	else
+	{
+		*line = (char *)malloc(sizeof(char) * 1);
+		*line[0] = '\0';
+	}
+	return (str);
+}
+
+char	*ft_sub_2(char **rest, char **line, char **buf)
+{
+	char	*str;
+	char	*tmp;
+
+	str = ft_strchr(*buf, '\n');
+	if (str)
+	{
+		str++;
+		if (*str != '\0')
+			*rest = ft_strdup(str);
+		*str = '\0';
+	}
+	tmp = *line;
+	*line = ft_strjoin(*line, *buf);
+	free(tmp);
+	return (str);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*left_str;
+	char		*buf;
+	int			i;
+	char		*str;
+	static char	*rest[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);
-	left_str = get_first_line(fd, left_str);
-	if (!left_str)
+	if (BUFFER_SIZE < 1 || read(fd, 0, 0) == -1 || fd < 0)
 		return (NULL);
-	line = get_new_line(left_str);
-	left_str = new_left_str(left_str);
-	return (line);
+	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
+		return (NULL);
+	str = ft_sub(&rest[fd], &line);
+	i = 1;
+	while (!str && i)
+	{
+		i = read(fd, buf, BUFFER_SIZE);
+		buf[i] = '\0';
+		str = ft_sub_2(&rest[fd], &line, &buf);
+	}
+	free(buf);
+	if (ft_strlen(line) > 0)
+		return (line);
+	free (line);
+	return (NULL);
 }
