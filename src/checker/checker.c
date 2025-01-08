@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mavellan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/08 16:56:25 by mavellan          #+#    #+#             */
+/*   Updated: 2025/01/08 16:56:34 by mavellan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 void	ft_check_sub(t_stack **a, t_stack **b, char *line)
@@ -74,7 +86,6 @@ int	main(int ac, char **av)
 		write(1, "OK\n", 3);
 	else
 		ft_checker_sub(&a, &b, line);
-
 	ft_free(&a);
 	ft_free(&b);
 	return (0);
