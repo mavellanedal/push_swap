@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:04:48 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/23 22:47:52 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:50:28 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*get_next_line(int fd);
+char	*ft_sub(char **rest, char **line);
+char	*ft_sub_2(char **rest, char **line, char **buf);
 typedef struct s_list
 {
 	void			*content;
@@ -69,8 +72,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-char	*get_next_line(int fd);
-char	*ft_sub(char **rest, char **line);
-char	*ft_sub_2(char **rest, char **line, char **buf);
 
 #endif
