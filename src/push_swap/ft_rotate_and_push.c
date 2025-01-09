@@ -6,12 +6,14 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:46:36 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/23 16:42:07 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:48:59 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+// Esta funcion rota ambos stacks en la misma direccion
+// tantas  veces como sea necesario.
 int	ft_apply_rarb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
@@ -37,6 +39,8 @@ int	ft_apply_rarb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
+// Esta funcion rota ambos stacks en la misma direccion
+// de forma inversa tantas  veces como sea necesario.
 int	ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
@@ -62,6 +66,8 @@ int	ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
+// Esta funcion rota el stack_a en adireccion reversa,
+// el stack_b en contrario tantas veces como se necesite.
 int	ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
@@ -83,6 +89,8 @@ int	ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
+// Esta funcion rota el stack_b en adireccion reversa,
+// el stack_a en contrario tantas veces como se necesite.
 int	ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')

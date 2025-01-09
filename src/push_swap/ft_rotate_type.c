@@ -6,12 +6,16 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:58:58 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/23 16:18:48 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:44:47 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+// Esta funcion calcula la decision de que combinacion
+// de rotaciones es mejor usar para ordenar el stack.
+// Despues de la rotacion siempre hay un push por hacer
+// La funcion se usa de envio de A a B.
 int	ft_rotate_type_ab(t_stack *a, t_stack *b)
 {
 	int		i;
@@ -33,6 +37,11 @@ int	ft_rotate_type_ab(t_stack *a, t_stack *b)
 	}
 	return (i);
 }
+
+// Esta funcion calcula la decision de que combinacion
+// de rotaciones es mejor usar para ordenar el stack.
+// Despues de la rotacion siempre hay un push por hacer
+// La funcion se usa de envio de A a B.
 
 int	ft_rotate_type_ba(t_stack *a, t_stack *b)
 {

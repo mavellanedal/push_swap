@@ -6,11 +6,16 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:39:37 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/20 16:03:02 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/09 12:47:57 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+// Esta funcion comprueba si hay algun numero duplicado.
+// Selecciona el primer numero, lo compara con todos los demas.
+// En caso de no ser igual pasa al sigueinte
+// y lo vuelve a comparar con los demas.
 
 int	ft_check_dup(t_stack *a)
 {
@@ -30,6 +35,10 @@ int	ft_check_dup(t_stack *a)
 	return (0);
 }
 
+// Esta funcion se ejecuta cuando el input esta separado por espacios.
+// Lo que hace es hacer un split
+// Aplica un atoi sobre cada elemenot de la lista devulta por el split
+// Pone el numero al final de un nuevo stack.
 t_stack	*ft_subprocess(char **av)
 {
 	t_stack	*a;
@@ -51,6 +60,12 @@ t_stack	*ft_subprocess(char **av)
 	return (a);
 }
 
+// Esta funcion hace tres cosas
+// 1. Comprueba si el input es menor de 2
+// 2. Comprueba si el numero de inputs es 2,
+//		En ese caso llama a otra funcion.
+// 3. Comprueba si el numero de inputs es mayor de 2 aplica el atoi
+//		y lo agrega al final del stack.
 t_stack	*ft_check_arg(int ac, char **av)
 {
 	t_stack	*a;

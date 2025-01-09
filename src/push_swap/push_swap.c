@@ -6,7 +6,7 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:26 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/23 17:42:52 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:11:09 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	main(int ac, char **av)
 	{
 		ft_sort(&a);
 	}
+	ft_free(&a);
 	return (0);
 }

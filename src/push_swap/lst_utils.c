@@ -6,12 +6,13 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 15:45:45 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/20 16:07:34 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:06:27 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+// Devuelve puntero con la ultima poscion del stack.
 t_stack	*ft_lstlast2(t_stack *lst)
 {
 	if (!lst)
@@ -21,6 +22,7 @@ t_stack	*ft_lstlast2(t_stack *lst)
 	return (lst);
 }
 
+// Devuelve la longitud del stack.
 int	ft_lstsize2(t_stack *lst)
 {
 	size_t	i;
@@ -34,6 +36,7 @@ int	ft_lstsize2(t_stack *lst)
 	return (i);
 }
 
+// Encuetra el numero menor del stack.
 int	ft_min(t_stack *a)
 {
 	int	i;
@@ -48,6 +51,7 @@ int	ft_min(t_stack *a)
 	return (i);
 }
 
+// Encuentra el numero mas grande del stack.
 int	ft_max(t_stack *a)
 {
 	int	i;
@@ -62,6 +66,7 @@ int	ft_max(t_stack *a)
 	return (i);
 }
 
+// Encuentra el indice de un numero determinado.
 int	ft_find_index(t_stack *a, int nbr)
 {
 	int	i;

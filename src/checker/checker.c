@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mavellan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 16:56:25 by mavellan          #+#    #+#             */
-/*   Updated: 2025/01/08 16:56:34 by mavellan         ###   ########.fr       */
+/*   Created: 2025/01/08 16:55:00 by mavellan          #+#    #+#             */
+/*   Updated: 2025/01/09 13:53:47 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_check_sub(t_stack **a, t_stack **b, char *line)
 		ft_rrr(a, b, 1);
 }
 
+// Esta funcion lee las lineas y comprueba si el comando es valido.
+// Si lo es, ejecuta el comando.
 char	*ft_check(t_stack **a, t_stack **b, char *line)
 {
 	if (line[0] == 's' && line[1] == 'a' && line[2] == '\n')
@@ -47,6 +49,8 @@ char	*ft_check(t_stack **a, t_stack **b, char *line)
 	return (get_next_line(0));
 }
 
+// Esta funcion compueba la validez de los comandos del stack.
+// Si es valido, y el stack_a esta ordenado, devuelve OK.
 void	ft_checker_sub(t_stack **a, t_stack **b, char *line)
 {
 	char	*tmp;

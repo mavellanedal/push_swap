@@ -6,12 +6,14 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:42:12 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/23 17:19:52 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:06:28 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+// Esta funcion envia del stack_a al stack_b todos los elementos
+// Hasta que quedan 3.
 void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
@@ -37,6 +39,12 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+//Esta funcion uno por uno envia todos los elementos
+// del stack_a al stack_b, hasta que queden solo 3 elementos
+// en el stack_a. Mientras enviamos, se asegura que el stack_b
+// esta ordenado. Cuando quedan 3 elementos en el stack_a llama
+// a la funcion ft_sort_three para ordenar los ultimos 3
+// elementos del stack_a.
 t_stack	*ft_sort_b(t_stack **stack_a)
 {
 	t_stack	*stack_b;
@@ -53,6 +61,8 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 	return (stack_b);
 }
 
+// Esta funcion esta enviando de vuelta los elementos de stack_b
+// Al stack_a hasta que stack_b este vacio.
 t_stack	**ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
@@ -79,6 +89,19 @@ t_stack	**ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 	return (stack_a);
 }
 
+// Esta fucnion ordena el stack_a si hay mas de
+// 2 elementos en el propio stack\
+// Luego ordena el stack_a despues de haber
+// enviado todos los valores al stack_b, ordenado y
+// enviado de vuelta al stack_a.
+// Porque, incluso el stack_a es ordenado al final,
+// El numero minimo debe estar en arriba del stack_a
+// Entonces lo unico que hace es enviar el numero menor
+// arriba del todo.
+// Para enviar el numero menor lo que hago es comprobar
+// Donde se encuentra, en caso de estar mitad arriba se
+// aplica ra de forma normal, en caso contrario se hace de
+// forma reversa.
 void	ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_b;

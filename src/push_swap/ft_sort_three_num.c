@@ -6,12 +6,13 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:18:59 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/23 17:16:17 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:49:10 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+// Esta funcion ordena el stack_a si solo hay 3 elementos dentro.
 void	ft_sort_three_num(t_stack **stack_a)
 {
 	if (ft_min(*stack_a) == (*stack_a)->nbr)

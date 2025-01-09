@@ -6,12 +6,14 @@
 /*   By: mavellan <mavellan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:01:32 by mavellan          #+#    #+#             */
-/*   Updated: 2024/12/23 17:25:02 by mavellan         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:12:02 by mavellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+// Esta funcion enceuntra el indice que debe obtener el numero
+// una vez este enivado al stack_b.
 int	ft_find_place_b(t_stack *stack_b, int nbr_push)
 {
 	int		i;
@@ -35,6 +37,8 @@ int	ft_find_place_b(t_stack *stack_b, int nbr_push)
 	return (i);
 }
 
+// Esta funcion enceuntra el indice que debe obtener el numero
+// una vez este enivado al stack_a.
 int	ft_find_place_a(t_stack *stack_a, int nbr_push)
 {
 	int		i;
